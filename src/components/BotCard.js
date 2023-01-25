@@ -9,10 +9,14 @@ const botTypeClasses = {
   Captain: "icon star",
 };
 
-function BotCard({ bot, clickEvent, deleteBot }) {
+function BotCard({ bot, botFunction }) {
   return (
     <div className="ui column">
-      <div className="ui card" key={bot.id} onClick={() => clickEvent(bot)}>
+      <div
+        className="ui card"
+        key={bot.id}
+        onClick={() => botFunction(bot)}
+      >
         <div className="image">
           <img alt="oh no!" src={bot.avatar_url} />
         </div>
@@ -43,10 +47,9 @@ function BotCard({ bot, clickEvent, deleteBot }) {
             <div className="ui center aligned segment basic">
               <button
                 className="ui mini red button"
-                onClick={(event) => {
-                  event.stopPropagation();
-                  deleteBot(bot);
-                }}
+                onClick={() =>
+                  console.log("add code to connect event listener")
+                }
               >
                 x
               </button>
